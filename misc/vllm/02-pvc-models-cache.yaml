@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: models-storage
+  namespace: vllm
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 200Gi
+  # storageClassName: manual
+  volumeMode: Filesystem
+  volumeName: pv-models-cache
